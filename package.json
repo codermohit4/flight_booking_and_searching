@@ -1,10 +1,11 @@
 {
   "name": "flightsandsearch",
   "version": "1.0.0",
-  "description": "microservies for airlines booking",
+  "description": "microservices for airlines booking",
   "main": "index.js",
+ 
   "scripts": {
-    "start": "npx nodemon"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,6 @@
     "body-parser": "^2.2.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "nodeman": "^1.1.2"
+    "nodemon": "^3.1.10"
   }
 }
