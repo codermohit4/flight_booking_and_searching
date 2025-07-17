@@ -14,8 +14,4 @@ project-root/
 │   └── routes/           # (Optional) Express route definitions
 │
 ├── tests/                # Test files (unit/integration) [later]
-│
-├── 1/ to 10/             # ❓ Unclear — these might be:
-│                         # - data folders
-│                         # - temporary dev folders
-│                         # - numbered microservices or modules
+
