@@ -1,1 +1,1 @@
-//database setip
+// database setup
