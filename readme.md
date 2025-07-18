@@ -1,17 +1,20 @@
-project-root/
-│
-├── package.json          # NPM metadata and dependencies
-├── README.md             # Project documentation
-│
-├── src/                  # Main source code directory
-│   ├── index.js          # Entry point (e.g. Express server setup)
-│   ├── config/           # Configuration files (DB, environment, etc.)
-│   ├── controllers/      # Route handlers
-│   ├── models/           # Database models (e.g. Mongoose/Sequelize)
-│   ├── middlewares/      # Custom Express middlewares
-│   ├── services/         # Business logic or service layers
-│   ├── utils/            # Utility/helper functions
-│   └── routes/           # (Optional) Express route definitions
-│
-├── tests/                # Test files (unit/integration) [later]
+# Welcome to Flights Service
 
+## Project Setup
+
+1. Clone the project to your local machine.
+2. Run `npm install` in the root directory of the project.
+3. Create a `.env` file in the root directory and add the following environment variable:
+
+   ```env
+   PORT=3000
+
+{
+  "development": {
+    "username": "root",
+    "password": "your_password",
+    "database": "flights_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
