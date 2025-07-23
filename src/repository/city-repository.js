@@ -3,14 +3,15 @@ const { City } = require('../models/index');
 
 
 
+
 class CityRepository {
   async createCity({ name }) {
     try {
       const city = await City.create({ name });
       return city;
     } catch (error) {
-      console.log("Something went wrong in the repository layer");
-      throw { error };
+      console.error("Repository Error in createCity:", error); // Better logging
+      throw error; // ✅ FIXED: don't wrap
     }
   }
 
@@ -21,8 +22,8 @@ class CityRepository {
       });
       return true;
     } catch (error) {
-      console.log("Something went wrong in the repository layer");
-      throw { error };
+      console.error("Repository Error in deleteCity:", error);
+      throw error;
     }
   }
 
@@ -33,8 +34,8 @@ class CityRepository {
       });
       return city;
     } catch (error) {
-      console.log("Something went wrong in the repository layer");
-      throw { error };
+      console.error("Repository Error in updateCity:", error);
+      throw error;
     }
   }
 
@@ -43,8 +44,8 @@ class CityRepository {
       const city = await City.findByPk(cityId);
       return city;
     } catch (error) {
-      console.log("Something went wrong in the repository layer");
-      throw { error };
+      console.error("Repository Error in getCity:", error);
+      throw error;
     }
   }
 }
