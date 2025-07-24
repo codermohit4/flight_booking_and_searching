@@ -29,9 +29,16 @@ class CityRepository {
 
   async updateCity(cityId, data) {
     try {
-      const city = await City.update(data, {
-        where: { id: cityId }
-      });
+      // the below approach also works but not return updated the object
+      // if you are using pgsql then it wil work
+      // const city = await City.update(data, {
+      //   where: { id: cityId },
+      // returning: true,
+      // plain: true,
+      // });
+      const city = await City.findByPk(cityId);
+      city.name = data.name;
+      await city.save();
       return city;
     } catch (error) {
       console.error("Repository Error in updateCity:", error);
@@ -45,6 +52,15 @@ class CityRepository {
       return city;
     } catch (error) {
       console.error("Repository Error in getCity:", error);
+      throw error;
+    }
+  }
+  async getAllCities() {
+    try {
+      const cities = await City.findAll();
+      return cities;
+    } catch (error) {
+      console.error("Repository Error in getAllCities:", error);
       throw error;
     }
   }
