@@ -29,3 +29,9 @@ once you've added your db config as listed above . go to the src folder from you
 - flight
 -airport
 -city
+
+##tables
+### city -> id, name , created_at , updated_At;
+### airport -> id , name , adress, city_id , created_at, updated_at 
+
+realationship -> city has many airports and airports belong to a city(one to many)
