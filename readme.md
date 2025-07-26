@@ -35,3 +35,16 @@ once you've added your db config as listed above . go to the src folder from you
 ### airport -> id , name , adress, city_id , created_at, updated_at 
 
 realationship -> city has many airports and airports belong to a city(one to many)
+
+```
+## npx sequelize model:generate --name airport --attributes name:String,address:String,cityId:integer
+## npx sequelize db:migrate
+``
+// using for the seeders 
+$ npx sequelize seed:generate --name add-airports
+\
+
+task to do instead of thi show can we use in index.js file and join all airports
+mysql> select *from airports joiner  cities on airports.cityId = cities.id where cities.id = 5;
+
+ this wil show you the all airports in theseerv
