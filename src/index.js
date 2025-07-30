@@ -1,12 +1,12 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require("express");
-const { Airport, City } = require('./models/index'); // ✅ Corrected import
+// const { Airport, City } = require('./models/index'); // ✅ Corrected import
 const bodyParser = require("body-parser");
 const db = require('./models/index');
 const { PORT } = require('./config/server');
 const apiRoutes = require('./routes/index');
 const CityRepository = require('./repository/city-repository');
-
+const {airplane} = require('./models/index')
 const setupAndStartServer = async () => {
   const app = express();
 
@@ -34,6 +34,15 @@ const setupAndStartServer = async () => {
   if(process.env.SYNC_DB){
    db.sequelize.sync({alter:true})
    //dont use force it will drop the table and create new one  or delete the old ones
+
+
+   // creating direct  airplane   dont forget to add db in env file
+  //  await airplane.create({
+  //   modelnumber: 'airindia',
+  //   capacity: 200
+  // });
+  
+
   }
 });
 }

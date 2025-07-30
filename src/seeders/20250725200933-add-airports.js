@@ -6,12 +6,13 @@ module.exports = {
     /**
      * Add seed commands here.
      *
-     * Example:
+     * Example: 
      * await queryInterface.bulkInsert('People', [{
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
     */
+
    await queryInterface.bulkInsert('airports', [
     {name: 'patna', address: 'patna,bihar,india', cityId: 1,
       createdAt: new Date(),
@@ -22,11 +23,11 @@ module.exports = {
       updatedAt: new Date()
     },
     
-    {name: 'bangalore', address: 'bangalore,karnataka,india', cityId: 6,
+    {name: 'howrah', address: 'kolkata,west bengal,india', cityId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
-    {name: 'hyderabad', address: 'hyderabad,telangana,india', cityId:5 ,
+    {name: 'faridabad', address: 'faridabad,haryana,india', cityId:4 ,
       createdAt: new Date(),
       updatedAt: new Date()
     },
