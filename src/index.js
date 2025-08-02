@@ -31,8 +31,8 @@ const setupAndStartServer = async () => {
   // console.log("City:", city.name);
   // console.log("Airports in city:", airports.map(a => a.name));
 
-  if(process.env.SYNC_DB){
-   db.sequelize.sync({alter:true})
+  // if(process.env.SYNC_DB){
+  //  db.sequelize.sync({alter:true})
    //dont use force it will drop the table and create new one  or delete the old ones
 
 
@@ -43,7 +43,7 @@ const setupAndStartServer = async () => {
   // });
   
 
-  }
+  // }
 });
 }
 
