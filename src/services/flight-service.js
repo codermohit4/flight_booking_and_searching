@@ -42,6 +42,18 @@ class FlightService {
             throw error;
         }
     }
+    async getAllFlights(data){
+        try {
+            const flightRepository = new FlightRepository();
+            const flights = await flightRepository.getAllFlights(data);
+            return flights;
+        } catch (error) {
+            console.log("Something went wrong in the service layer");
+            throw error;
+        }
+    }
+    // dont forget to update in controller also in flight-controller.js
+    // name of getAllFlights is getall
     
 }
 module.exports = FlightService;
