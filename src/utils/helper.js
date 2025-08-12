@@ -10,9 +10,15 @@ function comparetime(timeString1, timeString2) {
     let time1 = new Date(timeString1);
     let time2 = new Date(timeString2);
 
+    if (isNaN(time1.getTime()) || isNaN(time2.getTime())) {
+        console.log("❌ Invalid date format:", timeString1, timeString2);
+        return false;
+    }
+
+    
     // Convert both Date objects to timestamps (milliseconds since epoch)
     // and compare them to check which is later
-    return time1.getTime() > time2.getTime();
+    return time1.getTime() < time2.getTime();
 }
 
 module.exports = { comparetime };
